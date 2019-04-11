@@ -1,0 +1,2 @@
+# WechatAssistant
+Init Readme 

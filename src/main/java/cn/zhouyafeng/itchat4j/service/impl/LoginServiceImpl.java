@@ -126,6 +126,12 @@ public class LoginServiceImpl implements ILoginService {
 		String qrUrl = URLEnum.QRCODE_URL.getUrl() + core.getUuid();
 		HttpEntity entity = myHttpClient.doGet(qrUrl, null, true, null);
 		try {
+
+			File parentDir = new File(qrPath).getParentFile();
+			if(!parentDir.exists()){
+            	LOG.warn("QR文件父目录不存在，即将创建 : "+parentDir);
+				parentDir.mkdir();
+        	}
 			OutputStream out = new FileOutputStream(qrPath);
 			byte[] bytes = EntityUtils.toByteArray(entity);
 			out.write(bytes);

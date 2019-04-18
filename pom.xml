@@ -111,6 +111,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <encoding>utf-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -118,9 +119,10 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
+                    <encoding>UTF-8</encoding>
                     <archive>
                         <manifest>
-                            <mainClass>com.ztech.controller.WechatAssistant</mainClass>
+                            <mainClass>com.ztech.WechatAssistant</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -167,6 +169,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <encoding>utf-8</encoding>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                         <descriptorRef>src</descriptorRef>

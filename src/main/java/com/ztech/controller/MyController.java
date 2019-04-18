@@ -27,7 +27,7 @@ public class MyController implements IMsgHandlerFace {
 
 
     //保存微信收到的文件类地址
-    String basepath = "/Users/zhy/IdeaProjects/WechatAssistant/files";
+    String basepath = ConfigUtil.getValue("basepath");
     @Override
     public String textMsgHandle(BaseMsg msg) {
         String text = msg.getText();

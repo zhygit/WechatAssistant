@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.ztech.Dao.MsgDao;
 import com.ztech.Util.ConfigUtil;
 import com.ztech.beans.MsgLog;
-import com.ztech.service.CSVWriteService;
+import com.ztech.service.CSVService;
 import org.apache.log4j.Logger;
 
 import java.io.File;
@@ -122,7 +122,7 @@ public class MyController implements IMsgHandlerFace {
                 msgLog.getTousername(),
                 msgLog.getLoginuser()
         });
-        CSVWriteService csvWriteService = new CSVWriteService();
+        CSVService csvService = new CSVService();
         String csvfile = ConfigUtil.getValue("csvfile.output.path");
         String[] fileHeader = ConfigUtil.getValue("csv.header").split(",");
         File parentDir = new File(csvfile).getParentFile();
@@ -130,7 +130,7 @@ public class MyController implements IMsgHandlerFace {
             LOG.warn("CSV文件父目录不存在，即将创建 : "+parentDir);
             parentDir.mkdir();
         }
-        csvWriteService.write(csvfile,fileHeader,list);
+        csvService.write(csvfile,fileHeader,list);
         LOG.info("Write CSV OK ： ");
         LOG.info("=======================================================");
 //        LOG.info("======================== MsgLog DB ====================");

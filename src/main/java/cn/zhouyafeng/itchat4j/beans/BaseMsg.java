@@ -33,6 +33,7 @@ public class BaseMsg implements Serializable {
 	private String text;
 	private String toUserName;
 
+	private String isAt;
 
 	/** 群消息相关 **/
 	private String fromGroupMember;
@@ -70,6 +71,14 @@ public class BaseMsg implements Serializable {
 	private String mediaId;
 	private String content;
 	private String statusNotifyUserName;
+
+	public String getIsAt() {
+		return isAt;
+	}
+
+	public void setIsAt(String isAt) {
+		this.isAt = isAt;
+	}
 
 	public int getIsSend() {
 		return isSend;
@@ -351,6 +360,7 @@ public class BaseMsg implements Serializable {
 				", msgType=" + msgType +
 				", text='" + text + '\'' +
 				", toUserName='" + toUserName + '\'' +
+				", isAt='" + isAt + '\'' +
 				", fromGroupMember='" + fromGroupMember + '\'' +
 				", groupNickName='" + groupNickName + '\'' +
 				", groupId='" + groupId + '\'' +

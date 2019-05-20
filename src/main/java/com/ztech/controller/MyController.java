@@ -132,11 +132,11 @@ public class MyController implements IMsgHandlerFace {
         }
         csvService.write(csvfile,fileHeader,list);
         LOG.info("Write CSV OK ： ");
-        LOG.info("=======================================================");
-//        LOG.info("======================== MsgLog DB ====================");
-//        int result = msgDao.insertMsgLog(msgLog);
-//        LOG.info("Insert OK ： "+result);
 //        LOG.info("=======================================================");
+//        LOG.info("======================== MsgLog DB ====================");
+        int result = msgDao.insertMsgLog(msgLog);
+        LOG.info("Insert OK ： "+result);
+        LOG.info("=======================================================");
 
         return null;
     }

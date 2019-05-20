@@ -8,6 +8,16 @@ public class Answer {
     private String answertype;
     private List<String> keywords;
 
+    public String getKeywd() {
+        return keywd;
+    }
+
+    public void setKeywd(String keywd) {
+        this.keywd = keywd;
+    }
+
+    private String keywd;
+
     public String getId() {
         return id;
     }
